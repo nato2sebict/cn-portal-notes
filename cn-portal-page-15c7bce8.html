@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bet365 平台简介 · 快速识别指南</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #f6f7f9;
+            color: #1e1e1e;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .page {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem 4rem;
+        }
+
+        /* ——— hero ——— */
+        .hero {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 2.8rem 2.5rem 2.5rem;
+            margin-bottom: 2.8rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.04);
+        }
+
+        .hero .badge {
+            display: inline-block;
+            font-size: 0.7rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 0.3rem 0.9rem;
+            background: #e9ebf0;
+            border-radius: 40px;
+            color: #2c3e50;
+            margin-bottom: 1.2rem;
+            font-weight: 600;
+        }
+
+        .hero h1 {
+            font-size: 2.4rem;
+            font-weight: 650;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            margin-bottom: 0.6rem;
+            color: #0a1929;
+        }
+
+        .hero .sub {
+            font-size: 1.05rem;
+            color: #4b5a6b;
+            border-left: 3px solid #bac8db;
+            padding-left: 1rem;
+            margin-top: 0.3rem;
+            margin-bottom: 0;
+        }
+
+        /* ——— 背景卡片 ——— */
+        .context-card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 1.8rem 2.2rem;
+            margin-bottom: 2.2rem;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+        }
+
+        .context-card h2 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1f2a3a;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .context-card p {
+            color: #2f3b4c;
+            font-size: 0.95rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .context-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .context-card .label-light {
+            background: #f0f2f5;
+            padding: 0.2rem 0.7rem;
+            border-radius: 30px;
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: #2c3e50;
+        }
+
+        /* ——— 三段式介绍 ——— */
+        .feature-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.8rem;
+            margin: 2.5rem 0 2.2rem;
+        }
+
+        .feature-item {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 1.6rem 2rem;
+            border-left: 4px solid #d0d9e6;
+            transition: border-color 0.2s;
+        }
+
+        .feature-item:hover {
+            border-left-color: #1e2b3c;
+        }
+
+        .feature-item h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+            color: #0a1929;
+        }
+
+        .feature-item .meta {
+            font-size: 0.8rem;
+            color: #718096;
+            margin-bottom: 0.6rem;
+            letter-spacing: 0.3px;
+        }
+
+        .feature-item p {
+            font-size: 0.95rem;
+            color: #2d3748;
+        }
+
+        /* ——— 提示 / 摘要区块 ——— */
+        .tip-area {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 2rem 2.2rem;
+            margin: 2.8rem 0 2.2rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+        }
+
+        .tip-area h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #1a2636;
+        }
+
+        .faq-short {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .faq-short .q {
+            font-weight: 500;
+            font-size: 0.9rem;
+            color: #1e293b;
+        }
+
+        .faq-short .a {
+            font-size: 0.85rem;
+            color: #4a5568;
+            padding-left: 0.5rem;
+            border-left: 2px solid #e2e8f0;
+            margin-top: 0.2rem;
+        }
+
+        .faq-short .item:not(:last-child) {
+            padding-bottom: 0.7rem;
+            border-bottom: 1px solid #edf2f7;
+        }
+
+        /* ——— 页尾链接 ——— */
+        .footer-note {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #e2e8f0;
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            color: #4a5a6e;
+        }
+
+        .footer-note a {
+            color: #1e2b3c;
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 1px solid #cbd5e1;
+            transition: border-color 0.15s, color 0.15s;
+        }
+
+        .footer-note a:hover {
+            border-bottom-color: #1e2b3c;
+            color: #0a1929;
+        }
+
+        .footer-note .small-meta {
+            display: block;
+            margin-top: 0.5rem;
+            font-size: 0.75rem;
+            color: #8a9aae;
+        }
+
+        /* ——— 响应式 ——— */
+        @media (max-width: 600px) {
+            .page {
+                padding: 1.8rem 1rem 3rem;
+            }
+
+            .hero {
+                padding: 2rem 1.2rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .context-card,
+            .tip-area {
+                padding: 1.4rem 1.2rem;
+            }
+
+            .feature-item {
+                padding: 1.2rem 1.2rem;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .hero .badge {
+                font-size: 0.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- hero -->
+    <div class="hero">
+        <div class="badge">platform  ·  快速识别</div>
+        <h1>bet365 是什么？<br>一个全球化的线上服务界面</h1>
+        <div class="sub">直接理解用途，减少中间信息损耗</div>
+    </div>
+
+    <!-- 背景说明 -->
+    <div class="context-card">
+        <h2><span class="label-light">背景</span> 从用户视角看这个站点</h2>
+        <p>当你打开 <strong>cn-portal-bet365.com</strong>，首先需要确认的是：这是一个为特定区域用户优化的访问页面，它聚合了核心功能入口与最新动态。不同于泛化介绍，此站点直接指向 <a href="https://cn-portal-bet365.com">bet365</a> 的基础操作面板——你不需要在多层菜单中寻找起点。</p>
+        <p>很多访问者在首次接触时，关心的是“这个页面是做什么的”以及“下一步该去哪里”。本文档将清晰分段说明，帮助你快速建立认知。</p>
+    </div>
+
+    <!-- 三段自然介绍 -->
+    <div class="feature-grid">
+        <div class="feature-item">
+            <h3>① 功能定位 · 一个集中的操作台</h3>
+            <div class="meta">适用于日常访问与信息核对</div>
+            <p>该页面整合了账户概览、常用模块跳转与状态提示。用户无需在多个标签页之间反复切换，即可完成高频操作。对经常使用 <a href="https://cn-portal-bet365.com">bet365</a> 服务的人来说，设计逻辑偏向效率优先。</p>
+        </div>
+        <div class="feature-item">
+            <h3>② 信息结构 · 减少认知负荷</h3>
+            <div class="meta">层级扁平，关键动作可见</div>
+            <p>从导航到内容区域均采用分区展示。历史记录、余额变动、活动通知等被安排在不同区块，但入口距离很短。这种布局避免了信息堆砌，让第一次到访的用户也能根据视觉权重找到目标。</p>
+        </div>
+        <div class="feature-item">
+            <h3>③ 适配场景 · 桌面与移动端的统一体验</h3>
+            <div class="meta">响应式设计覆盖主要设备</div>
+            <p>无论是使用笔记本还是手机访问，页面布局都会自动调整至合适的阅读宽度与触控尺寸。对经常在不同设备间切换的<strong>bet365</strong>用户而言，这种一致性降低了重新适应的成本。</p>
+        </div>
+    </div>
+
+    <!-- FAQ 摘要 + 提示 -->
+    <div class="tip-area">
+        <h4>常见疑问摘要</h4>
+        <div class="faq-short">
+            <div class="item">
+                <div class="q">这个页面和 bet365 主站是什么关系？</div>
+                <div class="a">它是针对特定区域用户访问的优化界面，功能与主站互通，但入口更直接。所有操作最终都指向同一个服务后端。</div>
+            </div>
+            <div class="item">
+                <div class="q">是否需要额外注册？</div>
+                <div class="a">不需要。使用已有的账户凭证即可登录。页面本身不要求独立注册。</div>
+            </div>
+            <div class="item">
+                <div class="q">页面加载速度如何？</div>
+                <div class="a">静态资源经过压缩，首屏加载较快。动态内容取决于网络环境，但整体响应保持在合理范围内。</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页尾访问提示 -->
+    <div class="footer-note">
+        <span>若需前往服务界面，可直接使用链接：</span>
+        <a href="https://cn-portal-bet365.com">bet365</a>
+        <span class="small-meta">该地址为区域访问入口，请确保网络环境畅通</span>
+    </div>
+
+</div>
+</body>
+</html>
