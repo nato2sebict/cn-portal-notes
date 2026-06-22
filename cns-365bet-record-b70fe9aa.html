@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>365bet · 信息索引与资料卡片</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: linear-gradient(145deg, #fce9d7 0%, #f6d5b3 40%, #f1c89a 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1.25rem;
+      color: #3e2c1d;
+    }
+
+    .page {
+      max-width: 960px;
+      width: 100%;
+    }
+
+    /* 欢迎 / 主视觉卡片 */
+    .hero-card {
+      background: #fffcf7;
+      border-radius: 40px;
+      box-shadow: 0 12px 28px rgba(110, 70, 40, 0.12), 0 4px 10px rgba(0,0,0,0.04);
+      padding: 2.8rem 2.5rem;
+      margin-bottom: 2.2rem;
+      transition: box-shadow 0.2s;
+    }
+
+    .hero-card h1 {
+      font-size: 2.8rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      color: #4e311a;
+      margin-bottom: 0.75rem;
+      line-height: 1.2;
+    }
+
+    .hero-card .sub {
+      font-size: 1.15rem;
+      color: #7a5f47;
+      max-width: 70%;
+      line-height: 1.6;
+      border-left: 4px solid #e7b28e;
+      padding-left: 1.2rem;
+    }
+
+    /* 卡片网格 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.8rem;
+      margin-bottom: 2.2rem;
+    }
+
+    .card {
+      background: #fffcf7;
+      border-radius: 28px;
+      padding: 2rem 2rem 2rem 2rem;
+      box-shadow: 0 6px 18px rgba(120, 80, 45, 0.08);
+      transition: transform 0.15s ease, box-shadow 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(140, 90, 50, 0.12);
+    }
+
+    .card h2 {
+      font-size: 1.6rem;
+      font-weight: 500;
+      color: #4e311a;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .card h2::before {
+      content: "◆";
+      font-size: 1.2rem;
+      color: #d89466;
+      margin-right: 0.2rem;
+    }
+
+    .card p {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #4a3728;
+      margin-bottom: 0.9rem;
+    }
+
+    .card ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .card li {
+      position: relative;
+      padding-left: 1.5rem;
+      margin-bottom: 0.6rem;
+      line-height: 1.6;
+      color: #3d2f21;
+    }
+
+    .card li::before {
+      content: "·";
+      position: absolute;
+      left: 0.2rem;
+      font-weight: bold;
+      color: #c58358;
+    }
+
+    /* 链接段落（句子内嵌） */
+    .link-section {
+      background: #fffcf7;
+      border-radius: 28px;
+      padding: 2rem 2.5rem;
+      margin-bottom: 2.2rem;
+      box-shadow: 0 6px 18px rgba(120, 80, 45, 0.08);
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #3e2c1d;
+    }
+
+    .link-section a {
+      color: #9b6a44;
+      text-decoration: none;
+      font-weight: 500;
+      background: #f7ede5;
+      padding: 0.08rem 0.8rem;
+      border-radius: 40px;
+      transition: background 0.2s, color 0.15s;
+      white-space: nowrap;
+      display: inline-block;
+      line-height: 1.8;
+    }
+
+    .link-section a:hover {
+      background: #e2c8b4;
+      color: #4e311a;
+    }
+
+    /* 附加摘要 / FAQ 风格卡片 */
+    .faq-card {
+      background: #fffcf7;
+      border-radius: 28px;
+      padding: 2rem 2.5rem;
+      box-shadow: 0 6px 18px rgba(120, 80, 45, 0.08);
+      margin-bottom: 2.2rem;
+    }
+
+    .faq-card h3 {
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: #4e311a;
+      margin-bottom: 1rem;
+    }
+
+    .faq-item {
+      padding: 0.7rem 0;
+      border-bottom: 1px solid #efe1d4;
+    }
+
+    .faq-item:last-of-type {
+      border-bottom: none;
+    }
+
+    .faq-item strong {
+      font-weight: 600;
+      color: #7a553a;
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    .faq-item span {
+      color: #4f3928;
+      line-height: 1.6;
+    }
+
+    /* 提示小字 */
+    .footnote {
+      text-align: center;
+      color: #7a624b;
+      font-size: 0.9rem;
+      padding: 1rem 0.5rem 0.2rem;
+      opacity: 0.8;
+      letter-spacing: 0.3px;
+    }
+
+    /* 响应式 */
+    @media (max-width: 700px) {
+      .card-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .hero-card {
+        padding: 2rem 1.8rem;
+      }
+
+      .hero-card h1 {
+        font-size: 2.2rem;
+      }
+
+      .hero-card .sub {
+        max-width: 100%;
+        font-size: 1rem;
+      }
+
+      .link-section,
+      .faq-card {
+        padding: 1.8rem 1.5rem;
+      }
+
+      .card {
+        padding: 1.8rem 1.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 1.2rem 0.9rem;
+      }
+
+      .hero-card h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <!-- 主视觉卡片 -->
+  <div class="hero-card">
+    <h1>365bet · 资料索引</h1>
+    <div class="sub">
+      从信息整理的角度梳理平台结构，提供一份简洁的功能卡片与人群参考。
+    </div>
+  </div>
+
+  <!-- 用途卡片 + 适合人群卡片 -->
+  <div class="card-grid">
+    <div class="card">
+      <h2>用途卡片</h2>
+      <p>汇集常见使用方向，便于快速了解模块价值：</p>
+      <ul>
+        <li>活动与赛事信息浏览</li>
+        <li>实时动态与数据查阅</li>
+        <li>多板块内容切换与检索</li>
+        <li>通知与更新订阅</li>
+        <li>个人收藏与历史记录</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h2>适合人群</h2>
+      <p>以下类型的用户可能会对平台功能产生兴趣：</p>
+      <ul>
+        <li>偏好整合式资讯获取的浏览者</li>
+        <li>希望跟踪赛事或活动进程的爱好者</li>
+        <li>需要快速查阅多类别信息的用户</li>
+        <li>对界面简洁度有一定要求的使用者</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 自然链接段落 -->
+  <div class="link-section">
+    <p>
+      在日常的信息整理过程中，许多人会将<strong>365bet</strong>作为一个参考节点，用于了解不同板块的分类逻辑与内容结构。如果你正在做平台调研或功能对比，不妨将<a href="https://cns-365bet.com">365bet</a>加入你的资料夹，从界面布局到信息层级都能给你一些整理灵感。无论是个人兴趣还是轻度研究，它都是一个值得标记的站点。
+    </p>
+  </div>
+
+  <!-- FAQ 摘要卡片 -->
+  <div class="faq-card">
+    <h3>常见话题摘要</h3>
+    <div class="faq-item">
+      <strong>▎ 这个页面主要提供什么？</strong>
+      <span>一份基于公开信息的功能索引与适用场景概述，不含引导或操作建议。</span>
+    </div>
+    <div class="faq-item">
+      <strong>▎ 是否包含推广性质的内容？</strong>
+      <span>不包含。所有描述均从资料整理、分类参考的角度出发，保持中性陈述。</span>
+    </div>
+    <div class="faq-item">
+      <strong>▎ 适合哪些研究场景？</strong>
+      <span>适合站点结构观察、同类平台对比、界面交互调研等非商业用途。</span>
+    </div>
+    <div class="faq-item">
+      <strong>▎ 内容会更新吗？</strong>
+      <span>本页仅作静态索引，不动态同步平台数据，请以实际站点为准。</span>
+    </div>
+  </div>
+
+  <!-- 提示 -->
+  <div class="footnote">
+    © 信息卡片摘要 · 仅供整理参考
+  </div>
+</div>
+</body>
+</html>
